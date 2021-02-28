@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,4 +72,7 @@ public class Restaurant {
         return name;
     }
 
+    public int calculating_total_price(List<Item> name1) {
+        return 0;
+    }
 }
