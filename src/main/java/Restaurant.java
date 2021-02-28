@@ -72,7 +72,14 @@ public class Restaurant {
         return name;
     }
 
-    public int calculating_total_price(List<Item> name1) {
-        return 0;
+    public int calculating_total_price(List<Item> orderlist) {
+        int ordervalue = 0;
+        if(orderlist.isEmpty()){
+            throw new NoItemSelectedException("no items selected");
+        }
+        for(Item item: orderlist){
+            ordervalue += item.getPrice();
+        }
+        return ordervalue;
     }
 }

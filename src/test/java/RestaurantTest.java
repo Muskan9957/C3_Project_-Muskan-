@@ -73,8 +73,17 @@ class RestaurantTest {
     public void calculating_total_price(){
 
         List<Item> orderlist= new ArrayList<>();
+        orderlist.addAll(restaurant.getMenu());
         restaurant.addToMenu("Burger", 70);
         assertEquals(388,restaurant.calculating_total_price(orderlist));
+    }
+
+    @Test
+    public void calculating_total_price_for_empty_orderlist(){
+
+        List<Item> orderlist= new ArrayList<>();
+        restaurant.addToMenu("Burger", 70);
+        assertThrows(NoItemSelectedException.class,()->restaurant.calculating_total_price(orderlist));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
